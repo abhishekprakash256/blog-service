@@ -1,0 +1,34 @@
+files 
+
+what acees we need 
+
+- the database acees for fetching the data (front end or any service will access data through here)
+- the database access for CRUD opertaions (when we put , delete or update datae)
+
+
+- what APi we need 
+
+
+access from front blog services
+
+- home
+- get article data 
+- get section data 
+- get explore data
+- get search data
+
+
+
+for the database operations 
+
+- make data and collection
+- insert data
+- delete data
+- show all data
+
+
+two files 
+
+- blog_api
+- database_crud_api 
+
