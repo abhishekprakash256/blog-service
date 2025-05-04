@@ -9,7 +9,7 @@ This API provides endpoints to fetch article data, section data, explore mixed s
 **Endpoint:**
 
 ```
-GET /blog/section/<category>/article/<article_name>
+GET mongo/blog/section/<category>/article/<article_name>
 ```
 
 **Description:**
@@ -60,7 +60,7 @@ Fetch detailed data of a specific article from a given category.
 **Endpoint:**
 
 ```
-GET /blog/section/<category>
+GET mongo/blog/section/<category>
 ```
 
 **Description:**
@@ -116,7 +116,7 @@ Retrieve card-style previews for articles in a specific section/category.
 **Endpoint:**
 
 ```
-GET /blog/section/explore
+GET mongo/blog/section/explore
 ```
 
 **Description:**
@@ -157,7 +157,7 @@ Fetches mixed cards from multiple sections, with optional limit.
 **Endpoint:**
 
 ```
-GET /blog/search
+GET mongo/blog/search
 ```
 
 **Description:**
@@ -224,25 +224,25 @@ Search for blog articles that match a specific keyword.
 ### Fetch a Single Article
 
 ```
-GET /blog/section/tech/article/python-tips
+GET mongo/blog/section/tech/article/python-tips
 ```
 
 ### Get Section Data (with Limit)
 
 ```
-GET /blog/section/tech?limit=5
+GET mongo/blog/section/tech?limit=5
 ```
 
 ### Explore Mixed Sections
 
 ```
-GET /blog/section/explore?limit=10
+GET mongo/blog/section/explore?limit=10
 ```
 
 ### Search Articles
 
 ```
-GET /blog/search?keyword=flask
+GET mongo/blog/search?keyword=flask
 ```
 
 ---
@@ -255,7 +255,7 @@ GET /blog/search?keyword=flask
 **Endpoint:**
 
 ```
-POST /db/create
+POST mongo/crud/db/create
 ```
 
 **Description:**
@@ -286,7 +286,7 @@ Creates a new MongoDB database and a collection.
 **Endpoint:**
 
 ```
-POST /db/insert
+POST mongo/crud/db/insert
 ```
 
 **Description:**
@@ -322,7 +322,7 @@ Inserts an article (or any JSON document) into a specific MongoDB collection.
 **Endpoint:**
 
 ```
-POST /db/delete
+POST mongo/crud/db/delete
 ```
 
 **Description:**
@@ -352,7 +352,7 @@ Deletes the entire database (⚠️ Use with caution).
 **Endpoint:**
 
 ```
-POST /db/fetch-all
+POST mongo/crud/db/fetch-all
 ```
 
 **Description:**
@@ -384,7 +384,7 @@ Fetches all documents in a specific collection.
 **Endpoint:**
 
 ```
-POST /db/fetch-article
+POST mongo/crud/db/fetch-article
 ```
 
 **Description:**

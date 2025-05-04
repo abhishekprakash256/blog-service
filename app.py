@@ -11,7 +11,6 @@ from apis.database_crud_api import dp_bp
 
 
 
-
 def create_app():
     
     app = Flask(__name__)
