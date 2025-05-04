@@ -77,3 +77,6 @@ instance/
 
 # macOS specific files
 .DS_Store
+
+#vscode
+.vscode/
