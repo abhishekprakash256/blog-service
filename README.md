@@ -43,9 +43,26 @@ source venv/bin/activate
 
 3️⃣ **Install dependencies:**
 
-```bash
-pip install -r requirements.txt
-```
+## **1. Requirements**
+To set up and run this project, ensure you meet the following requirements:
+
+- **MongoDB Installation**  
+  - Install MongoDB **bare-metal** or run it using Docker:  
+    ```bash
+    # Run MongoDB in Docker (recommended)
+    docker run -d --name mongo-db -p 27017:27017 mongo
+    ```
+  - Ensure the MongoDB server is running before testing or development.
+
+- **MongoDB Connection Setup**
+  - Configure the **MongoDB client** in `Helper_Fun` class:
+    - Use `"localhost"` if running MongoDB **locally**.
+    - Use `"mongo"` if running **inside Docker**.
+
+- **Install Required Dependencies**
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 4️⃣ **Set environment variables (optional):**
 
@@ -61,6 +78,38 @@ flask run
 ```
 
 The API will be available at `http://127.0.0.1:5000/`.
+
+
+### Run the module files
+
+Use commands in python to run module file in examples dir from root dir 
+
+python3 -m folder_name.file_name
+
+```bash
+python3 -m examples.basic_usage
+```
+
+### Run the test locally 
+
+```bash
+pytest
+
+```
+Run the command pytest in root directory
+
+## Configuration
+
+- Clients 
+    - "mongo" is passed when using insiede the docker conatienr to acces the mongo
+    - "localhost" is passed when using outside the docker container to access the mongo for bulk data insertion
+
+
+## Note
+
+The client name passed in the helper fucntion is imp as using from outside use - "localhost"
+The client name passed in the helper fucntion is imp as using from docker container use - "mongo"
+
 
 ---
 
