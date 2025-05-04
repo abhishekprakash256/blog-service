@@ -128,7 +128,7 @@ The client name passed in the helper fucntion is imp as using from docker contai
 
 `GET /blog/search?keyword=<your_search_term>`
 
-Full API details ➡️ [See API Documentation](#)
+Full API details ➡️ [See API Documentation](https://github.com/abhishekprakash256/mongo-access-service/blob/main/DEVDOC.md)
 
 ---
 
