@@ -322,7 +322,7 @@ Inserts an article (or any JSON document) into a specific MongoDB collection.
 **Endpoint:**
 
 ```
-POST mongo/crud/db/delete
+DELETE mongo/crud/db/delete
 ```
 
 **Description:**
