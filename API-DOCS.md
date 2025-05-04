@@ -245,4 +245,197 @@ GET /blog/section/explore?limit=10
 GET /blog/search?keyword=flask
 ```
 
+---
+
+## The API to form CRUD opertions in the database in the MONGO database 
+
+
+### 1️⃣ **Create Database & Collection**
+
+**Endpoint:**
+
+```
+POST /db/create
+```
+
+**Description:**
+
+Creates a new MongoDB database and a collection.
+
+**Request JSON:**
+
+```json
+{
+    "db_name": "my_blog_db",
+    "collection_name": "articles"
+}
+```
+
+**Responses:**
+
+| Status | Description                                               |
+| ------ | --------------------------------------------------------- |
+| 200    | Database and collection created successfully.             |
+| 400    | Missing required fields (`db_name` or `collection_name`). |
+| 500    | Database error or internal server error.                  |
+
+---
+
+### 2️⃣ **Insert Article Data**
+
+**Endpoint:**
+
+```
+POST /db/insert
+```
+
+**Description:**
+
+Inserts an article (or any JSON document) into a specific MongoDB collection.
+
+**Request JSON:**
+
+```json
+{
+    "db_name": "my_blog_db",
+    "collection_name": "articles",
+    "article_data": {
+        "article_name": "test1",
+        "content": "This is a sample blog post.",
+        "author": "John Doe"
+    }
+}
+```
+
+**Responses:**
+
+| Status | Description                                                             |
+| ------ | ----------------------------------------------------------------------- |
+| 201    | Data inserted successfully.                                             |
+| 400    | Missing required fields (`db_name`, `collection_name`, `article_data`). |
+| 500    | Database error or internal server error.                                |
+
+---
+
+### 3️⃣ **Delete Entire Database**
+
+**Endpoint:**
+
+```
+POST /db/delete
+```
+
+**Description:**
+
+Deletes the entire database (⚠️ Use with caution).
+
+**Request JSON:**
+
+```json
+{
+    "db_name": "my_blog_db"
+}
+```
+
+**Responses:**
+
+| Status | Description                              |
+| ------ | ---------------------------------------- |
+| 200    | Database deleted successfully.           |
+| 400    | Missing `db_name`.                       |
+| 500    | Database error or internal server error. |
+
+---
+
+### 4️⃣ **Fetch All Data**
+
+**Endpoint:**
+
+```
+POST /db/fetch-all
+```
+
+**Description:**
+
+Fetches all documents in a specific collection.
+
+**Request JSON:**
+
+```json
+{
+    "db_name": "my_blog_db",
+    "collection_name": "articles"
+}
+```
+
+**Responses:**
+
+| Status | Description                                             |
+| ------ | ------------------------------------------------------- |
+| 200    | Data fetched successfully (returns a list of articles). |
+| 400    | Missing `db_name` or `collection_name`.                 |
+| 404    | No data found.                                          |
+| 500    | Database error or internal server error.                |
+
+---
+
+### 5️⃣ **Fetch Article by Filter**
+
+**Endpoint:**
+
+```
+POST /db/fetch-article
+```
+
+**Description:**
+
+Fetches article(s) based on a filter (e.g., by article name).
+
+**Request JSON:**
+
+```json
+{
+    "db_name": "my_blog_db",
+    "collection_name": "articles",
+    "filter": {
+        "article_name": "test1"
+    }
+}
+```
+
+**Responses:**
+
+| Status | Description                                                       |
+| ------ | ----------------------------------------------------------------- |
+| 200    | Data fetched successfully (returns matched article(s)).           |
+| 400    | Missing required fields (`db_name`, `collection_name`, `filter`). |
+| 404    | No matching data found.                                           |
+| 500    | Database error or internal server error.                          |
+
+---
+
+## 🔒 **Error Handling**
+
+All endpoints return a structured JSON response with:
+
+* `status`: success, fail, or error
+* `message`: description of what happened
+* `data`: (if applicable) the data payload returned
+
+Example:
+
+```json
+{
+    "status": "success",
+    "data": [
+        {
+            "_id": "653af7f8b1e88d5e9f7c12d3",
+            "article_name": "test1",
+            "content": "This is a sample blog post.",
+            "author": "John Doe"
+        }
+    ]
+}
+```
+
 
