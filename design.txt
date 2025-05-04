@@ -32,3 +32,28 @@ two files
 - blog_api
 - database_crud_api 
 
+
+
+http://localhost:5000/mongo/crud/db/fetch-article
+
+
+#MONGO_DB_NAME = "test-main-database"
+#MONGO_COLLECTION_NAME = "test-article-collections"
+
+http://localhost:5000/mongo/crud/db/create 
+
+
+
+    {
+        "db_name": "test-main-database",
+        "collection_name": "test-article-collections"
+    }
+
+http://localhost:5000/mongo/blog/section/explore -works
+
+
+http://localhost:5000/mongo/blog/section/tech -works
+
+
+
+http://localhost:5000/mongo/blog//blog/section/<category>/article/<article_name>

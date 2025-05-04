@@ -1,5 +1,7 @@
 """
 The database CRUD API provides endpoints to create, read, update, and delete articles in a MongoDB database.
+
+The file will be wokrked on later to add the CRUD operations for the database not using right now.
 """
 
 # Import statements
@@ -56,7 +58,7 @@ def create_db_and_collection():
         }), HTTPStatus.BAD_REQUEST
 
     try:
-        db_helper_mongo.create_database_and_collection(db_name, collection_name)
+        db_helper_mongo.make_database_and_collection(db_name, collection_name)
         return jsonify({
             "status": "success",
             "message": f"Database '{db_name}' and collection '{collection_name}' created successfully."
@@ -153,7 +155,6 @@ def delete_database():
             "status": "error",
             "message": f"Database error: {str(e)}"
         }), HTTPStatus.INTERNAL_SERVER_ERROR
-
 
 
 

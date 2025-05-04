@@ -28,8 +28,6 @@ MONGO_SECTION_NAME = ["tech", "project", "life"]
 
 
 
-
-
 @blog_bp.route("/blog/section/<category>/article/<article_name>", methods=["GET"])
 def get_article_data(category, article_name):
     """

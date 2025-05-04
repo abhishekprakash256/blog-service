@@ -114,19 +114,19 @@ The client name passed in the helper fucntion is imp as using from docker contai
 
 ### 1️⃣ Get Article Data
 
-`GET /blog/section/<category>/article/<article_name>`
+`GET /mogno/blog/section/<category>/article/<article_name>`
 
 ### 2️⃣ Get Section Data
 
-`GET /blog/section/<category>?limit=<number>`
+`GET /mogno/blog/section/<category>?limit=<number>`
 
 ### 3️⃣ Get Explore Data
 
-`GET /blog/section/explore?limit=<number>`
+`GET /mongo/blog/section/explore?limit=<number>`
 
 ### 4️⃣ Search Articles
 
-`GET /blog/search?keyword=<your_search_term>`
+`GET /mongo/blog/search?keyword=<your_search_term>`
 
 Full API details ➡️ [See API Documentation](https://github.com/abhishekprakash256/mongo-access-service/blob/main/DEVDOC.md)
 
