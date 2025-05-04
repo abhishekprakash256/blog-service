@@ -14,6 +14,8 @@ import json
 # Define the blueprint for the blog API
 blog_bp = Blueprint('blog_bp', __name__)
 
+
+
 # MongoDB settings (make sure these are set somewhere globally or passed in)
 #mongo database infomation
 MONGO_DB_NAME = "test-main-database"
@@ -75,6 +77,7 @@ def get_article_data(category, article_name):
             "message": "An unexpected error occurred.",
             "details": str(e)
         }), HTTPStatus.INTERNAL_SERVER_ERROR
+
 
 
 
@@ -267,5 +270,6 @@ def getSearchData():
             "message": "An unexpected error occurred while processing your search request.",
             "details": str(e)
         }), HTTPStatus.INTERNAL_SERVER_ERROR
+
 
 
