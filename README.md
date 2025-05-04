@@ -1,8 +1,5 @@
 ## Mongo Access Service
 
-
-# 📰 **Blog API**
-
 A Flask-based REST API for retrieving blog articles and sections stored in MongoDB. This API allows you to fetch full articles, preview cards by section, explore mixed sections, and perform keyword-based searches.
 
 ---
