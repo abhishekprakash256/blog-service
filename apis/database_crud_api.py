@@ -28,7 +28,7 @@ dp_bp = Blueprint('dp_bp', __name__)
 
 #Make the functions and endpoints available in the blueprint
 
-@db_bp.route('/db/create', methods=['POST'])
+@dp_bp.route('/db/create', methods=['POST'])
 def create_db_and_collection():
     """
     API endpoint to create a new MongoDB database and collection.
@@ -70,7 +70,7 @@ def create_db_and_collection():
 
 
 
-@db_bp.route('/db/insert', methods=['POST'])
+@dp_bp.route('/db/insert', methods=['POST'])
 def insert_data():
     """
     API endpoint to insert data into a MongoDB collection.
@@ -116,7 +116,7 @@ def insert_data():
 
 
 
-@db_bp.route('/db/delete', methods=['DELETE'])
+@dp_bp.route('/db/delete', methods=['DELETE'])
 def delete_database():
     """
     API endpoint to delete (drop) a MongoDB database.
@@ -157,7 +157,7 @@ def delete_database():
 
 
 
-@db_bp.route('/db/fetch', methods=['POST'])
+@dp_bp.route('/db/fetch', methods=['POST'])
 def fetch_all_data():
     """
     API endpoint to fetch all data from a MongoDB collection.
@@ -203,7 +203,7 @@ def fetch_all_data():
 
 
 
-@db_bp.route('/db/fetch-article', methods=['POST'])
+@dp_bp.route('/db/fetch-article', methods=['POST'])
 def fetch_article_data():
     """
     API endpoint to fetch a specific article from a MongoDB collection.
