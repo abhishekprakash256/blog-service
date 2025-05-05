@@ -34,15 +34,6 @@ two files
 
 
 
-http://localhost:5000/mongo/crud/db/fetch-article
-
-
-#MONGO_DB_NAME = "test-main-database"
-#MONGO_COLLECTION_NAME = "test-article-collections"
-
-http://localhost:5000/mongo/crud/db/create 
-
-
 
     {
         "db_name": "test-main-database",
