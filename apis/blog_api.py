@@ -10,20 +10,13 @@ from pymongo.errors import PyMongoError
 from http import HTTPStatus
 from bson import json_util
 import json
+from .config import MONGO_DB_NAME, MONGO_COLLECTION_NAME, MONGO_HOST_NAME, MONGO_SECTION_NAME
 
 # Define the blueprint for the blog API
 
 blog_bp = Blueprint('blog_bp', __name__)
 
 
-
-# MongoDB settings (make sure these are set somewhere globally or passed in)
-#mongo database infomation
-
-MONGO_DB_NAME = "test-main-database"
-MONGO_COLLECTION_NAME = "test-article-collections"
-MONGO_HOST_NAME = "localhost"
-MONGO_SECTION_NAME = ["tech", "project", "life"]
 
 
 

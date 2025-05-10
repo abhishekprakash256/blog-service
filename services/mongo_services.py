@@ -7,7 +7,8 @@ import mongo_helper_kit
 
 #these are the information can chnage in future
 #mongo database infomation
-MONGO_HOST_NAME = "localhost"
+
+from apis.config import MONGO_HOST_NAME
 
 
 
