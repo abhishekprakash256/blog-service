@@ -76,6 +76,8 @@ flask run
 
 The API will be available at `http://127.0.0.1:5000/`.
 
+the localhost and 127.0.0.1 is resolved in mac and linux diffrently
+
 ## For the production env
 
 - use gununicorn
