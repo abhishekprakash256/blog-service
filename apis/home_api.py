@@ -5,7 +5,7 @@ home_bp = Blueprint('home_bp', __name__)
 @home_bp.route("/", methods=["GET"])
 def home():
     """
-    The home page of the CMS.
+    The home page of the CMS.  
     """
     html_content = """
     <!DOCTYPE html>

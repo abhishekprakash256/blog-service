@@ -76,6 +76,17 @@ flask run
 
 The API will be available at `http://127.0.0.1:5000/`.
 
+## For the production env
+
+- use gununicorn
+- run the app with command 
+
+```bash
+gunicorn -w 4 -b 0.0.0.0:8000 "app:create_app()"
+
+```
+runs in port 8000 for production 
+
 
 ### Run the module files
 
