@@ -3,7 +3,6 @@ import datetime
 from flask import Flask
 from apis.blog_api import blog_bp
 from apis.home_api import home_bp
-from apis.database_crud_api import dp_bp
 import os
 import logging
 from werkzeug.middleware.proxy_fix import ProxyFix
