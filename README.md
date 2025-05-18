@@ -84,10 +84,10 @@ the localhost and 127.0.0.1 is resolved in mac and linux diffrently
 - run the app with command 
 
 ```bash
-gunicorn -w 4 -b 0.0.0.0:8000 "app:create_app()"
+gunicorn -w 4 -b 0.0.0.0:5000 "app:create_app()"
 
 ```
-runs in port 8000 for production 
+runs in port 5000 for production 
 
 
 ### Run the module files
