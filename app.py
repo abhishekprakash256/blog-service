@@ -9,7 +9,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__)   
 
     # Load config from environment or fallback
     #app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev_default_secret')
