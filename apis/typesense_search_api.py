@@ -20,7 +20,13 @@ def search_typsense(search_query):
     #make the search paramaters
     search_parameters = {
     'q'         : search_query,
-    'query_by'  : 'article_data'
+    'query_by'  : 'article_data',
+    'query_by_weights': '2,1',
+    'prefix': 'true',
+    'num_typos': 2,
+    'split_join_tokens': True,
+    'drop_tokens_threshold': 1,
+    'exhaustive_search': False
 
     }
 
