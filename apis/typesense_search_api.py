@@ -21,7 +21,7 @@ def search_typsense(search_query):
     search_parameters = {
     'q'         : search_query,
     'query_by': 'article_data',
-    'prefix': 'true',
+    'prefix': 'all',
     'num_typos': 2,
     'split_join_tokens': True,
     'drop_tokens_threshold': 1,
