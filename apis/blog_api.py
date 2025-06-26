@@ -11,6 +11,8 @@ from http import HTTPStatus
 from bson import json_util
 import json
 from .config import MONGO_DB_NAME, MONGO_COLLECTION_NAME, MONGO_HOST_NAME, MONGO_SECTION_NAME
+from .typesense_search_api import search_typsense, search_mongodb_id
+
 
 # Define the blueprint for the blog API
 
@@ -233,6 +235,94 @@ def getSearchData():
                 "status": "fail",
                 "message": "The 'keyword' query parameter must be a string."
             }), 400
+        
+
+        #get the mongo doc _id list 
+        mongo_id_list = search_typsense(keyword)
+
+        #search the mongo db and get the json
+        data = search_mongodb_id(mongo_id_list)
+
+        # Perform the search this was before typesense 
+        #data = db_helper_mongo.search_database(MONGO_DB_NAME, MONGO_COLLECTION_NAME, keyword)
+
+        if not data:
+            return jsonify({
+                "status": "fail",
+                "message": f"No results found for keyword '{keyword}'."
+            }), 404
+
+        search_results = json.loads(json_util.dumps(data))
+
+        return jsonify({
+            "status": "success",
+            "data": search_results
+        }), HTTPStatus.OK
+
+    except PyMongoError as e:
+        return jsonify({
+            "status": "error",
+            "message": "A database error occurred while performing the search.",
+            "details": str(e)
+        }), HTTPStatus.INTERNAL_SERVER_ERROR
+
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": "An unexpected error occurred while processing your search request.",
+            "details": str(e)
+        }), HTTPStatus.INTERNAL_SERVER_ERROR
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+old func
+put the quote on comments
+@blog_bp.route("/blog/search", methods=["GET"])
+def getSearchData():
+    
+    Search the database for documents matching the given keyword.
+
+    Query Params:
+        keyword (str, required): The search keyword.
+
+
+    Example:
+        GET /mongo/search?keyword=a
+
+    Returns:
+        JSON response:
+            - 200 OK: List of matching documents.
+            - 400 Bad Request: If the keyword is missing.
+            - 404 Not Found: No results found for the given keyword.
+            - 500 Internal Server Error: Any unexpected/database error.
+    
+    try:
+        # Get query parameters
+        keyword = request.args.get("keyword")
+        
+        # Validate keyword
+        if not keyword:
+            return jsonify({
+                "status": "fail",
+                "message": "The 'keyword' query parameter is required."
+            }), 400
+
+        # Ensure keyword is a string
+        if not isinstance(keyword, str):    
+            return jsonify({
+                "status": "fail",
+                "message": "The 'keyword' query parameter must be a string."
+            }), 400
 
         # Perform the search
         data = db_helper_mongo.search_database(MONGO_DB_NAME, MONGO_COLLECTION_NAME, keyword)
@@ -264,5 +354,5 @@ def getSearchData():
             "details": str(e)
         }), HTTPStatus.INTERNAL_SERVER_ERROR
 
-
+"""
 
