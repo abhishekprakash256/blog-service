@@ -236,7 +236,9 @@ def getSearchData():
                 "message": "The 'keyword' query parameter must be a string."
             }), 400
         
-
+        #test printing
+        print(keyword)
+        
         #get the mongo doc _id list 
         mongo_id_list = search_typsense(keyword)
 
