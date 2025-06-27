@@ -24,7 +24,7 @@ def search_typsense(search_query):
     'prefix': 'all',
     'num_typos': 2,
     'split_join_tokens': True,         # correct boolean value
-    'drop_tokens_threshold': 0.5,      # allows partial matching if one word is missing
+    'drop_tokens_threshold': 1,      # allows partial matching if one word is missing
     'exhaustive_search': True    
 
     }
