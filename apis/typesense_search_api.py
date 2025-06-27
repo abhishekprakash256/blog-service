@@ -24,7 +24,7 @@ def search_typsense(search_query):
     'prefix': 'all',
     'num_typos': 2,
     'split_join_tokens': 'always',
-    'drop_tokens_threshold': 1,
+    'drop_tokens_threshold': 0.5,
     'exhaustive_search': False
 
     }
