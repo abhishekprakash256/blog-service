@@ -72,6 +72,9 @@ export FLASK_ENV=development
 
 ```bash
 flask run
+
+flask run --port=5000  #on specifc port
+
 ```
 
 The API will be available at `http://127.0.0.1:5000/`.
