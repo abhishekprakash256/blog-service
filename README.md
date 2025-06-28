@@ -71,6 +71,8 @@ export FLASK_ENV=development
 5️⃣ **Run the API:**
 
 ```bash
+source /home/ubuntu/.venvs/global/bin/activate   #activate the virtual env in machine 
+
 flask run
 
 flask run --port=5000  #on specifc port
