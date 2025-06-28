@@ -1,0 +1,3 @@
+- add the typesense client make a new file in services 
+- update the config with API KEY and schema
+- make chages in blog_api file
