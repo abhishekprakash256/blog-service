@@ -1,1 +1,2 @@
 from .mongo_services import db_helper_mongo
+from .typesense_client_service import typesense_client
