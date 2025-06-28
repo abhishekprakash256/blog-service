@@ -16,6 +16,10 @@ def search_typsense(search_query):
     """
     The function to search the typesense and return the id list for mongo db documnets 
     """
+    
+    #test to print the query 
+
+    print(f"the search query is {search_query}")
 
     #make the search paramaters
     search_parameters = {
