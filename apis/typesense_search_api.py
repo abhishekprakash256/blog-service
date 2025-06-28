@@ -1,7 +1,8 @@
 """
 The file to search the typesense for data and search in mongodb and return the list
 """
-
+import urllib.parse
+import re
 from bson.objectid import ObjectId
 import typesense
 import mongo_helper_kit
@@ -77,3 +78,17 @@ def search_mongodb_id(id_lst):
         results.append(card)
 
     return results
+
+
+
+def clean_encoded_string(encoded_str):
+    # Step 1: Decode percent-encoded characters
+    decoded = urllib.parse.unquote(encoded_str)
+    
+    # Step 2: Replace non-alphanumeric characters with space
+    cleaned = re.sub(r'[^a-zA-Z0-9]', ' ', decoded)
+    
+    # Step 3: Collapse multiple spaces into one
+    result = re.sub(r'\s+', ' ', cleaned).strip()
+    
+    return result

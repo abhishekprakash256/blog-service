@@ -11,7 +11,7 @@ from http import HTTPStatus
 from bson import json_util
 import json
 from .config import MONGO_DB_NAME, MONGO_COLLECTION_NAME, MONGO_HOST_NAME, MONGO_SECTION_NAME
-from .typesense_search_api import search_typsense, search_mongodb_id
+from .typesense_search_api import search_typsense, search_mongodb_id , clean_encoded_string
 
 
 # Define the blueprint for the blog API
@@ -237,10 +237,13 @@ def getSearchData():
             }), 400
         
         #test printing
-        print(keyword)
+        #print(keyword)
+
+        #clean keyword for the special characters 
+        clean_keyword = clean_encoded_string(keyword)
         
         #get the mongo doc _id list 
-        mongo_id_list = search_typsense(keyword)
+        mongo_id_list = search_typsense(clean_keyword)
 
         #search the mongo db and get the json
         data = search_mongodb_id(mongo_id_list)
