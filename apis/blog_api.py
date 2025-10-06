@@ -141,7 +141,7 @@ def get_section_data(category):
 
 
 
-@blog_bp.route("/blog-service/api/v1/search/section/explore", methods=["GET"])
+@blog_bp.route("/blog-service/api/v1/section/explore", methods=["GET"])
 def getExploreData():
     """
     The function to get the explore data of mixed sections.
