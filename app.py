@@ -17,7 +17,7 @@ def create_app():
 
     # Register Blueprints
     app.register_blueprint(home_bp)
-    app.register_blueprint(blog_bp, url_prefix='/mongo')
+    app.register_blueprint(blog_bp)
     # app.register_blueprint(dp_bp, url_prefix='/mongo/crud')
 
     # Apply proxy fix if behind reverse proxy (like NGINX)
