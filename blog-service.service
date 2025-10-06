@@ -1,11 +1,11 @@
 [Unit]
-Description=Mongo Access Service
+Description=Blog Service
 After=network.target
 
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/mongo-access-service
+WorkingDirectory=/home/ubuntu/blog-service
 ExecStart=/home/ubuntu/.venvs/global/bin/gunicorn -w 4 -b 0.0.0.0:5000 "app:create_app()"
 Restart=always
 RestartSec=5
