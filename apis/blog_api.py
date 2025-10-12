@@ -21,8 +21,8 @@ blog_bp = Blueprint('blog_bp', __name__)
 
 
 
-
-@blog_bp.route("/blog-service/api/v1/section/<category>/article/<article_name>", methods=["GET"])
+#https://api.meabhi.me/{microservice}/v{version}/{resource}/{optional-action}
+@blog_bp.route("/blog-service/v1/section/<category>/article/<article_name>", methods=["GET"])
 def get_article_data(category, article_name):
     """
     Get the article data from a specific category.
@@ -75,8 +75,8 @@ def get_article_data(category, article_name):
 
 
 
-
-@blog_bp.route("/blog-service/api/v1/section/<category>", methods=["GET"])
+#https://api.meabhi.me/{microservice}/v{version}/{resource}/{optional-action}
+@blog_bp.route("/blog-service/v1/section/<category>", methods=["GET"])
 def get_section_data(category):
     """
     Get section data (in card format) from a specific category.
@@ -140,8 +140,8 @@ def get_section_data(category):
 
 
 
-
-@blog_bp.route("/blog-service/api/v1/section/explore", methods=["GET"])
+#https://api.meabhi.me/{microservice}/v{version}/{resource}/{optional-action}
+@blog_bp.route("/blog-service/v1/section/explore", methods=["GET"])
 def getExploreData():
     """
     The function to get the explore data of mixed sections.
@@ -197,8 +197,8 @@ def getExploreData():
 
 
 
-
-@blog_bp.route("/blog-service/api/v1/search", methods=["GET"])
+#https://api.meabhi.me/{microservice}/v{version}/{resource}/{optional-action}
+@blog_bp.route("/blog-service/v1/search", methods=["GET"])
 def getSearchData():
     """
     Search the database for documents matching the given keyword.
