@@ -2,7 +2,7 @@ from flask import Blueprint, render_template_string
 
 home_bp = Blueprint('home_bp', __name__)
 
-@home_bp.route("/blog-service", methods=["GET"])
+@home_bp.route("/blog-service/", methods=["GET"])
 def home():
     """
     The home page of the CMS.  
